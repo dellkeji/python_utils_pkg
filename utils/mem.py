@@ -4,7 +4,9 @@ make a util to calculate memory usage of a process or system, and so on.
 """
 
 import os
+
 import psutil
+from memory_profiler import profile
 
 
 class MemoryUsage:
@@ -20,3 +22,11 @@ class MemoryUsage:
         # 返回 MB
         memory = info.uss / 1024.0 / 1024
         return memory
+
+    # %memit init_number()
+    @classmethod
+    @profile
+    def init_number(cls):
+        n = 100000
+        a = [1] * n
+        return a
