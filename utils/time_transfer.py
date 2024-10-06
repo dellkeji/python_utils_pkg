@@ -5,6 +5,7 @@ make a util to transfer time format
 
 import json
 from datetime import datetime
+from typing import Optional
 
 
 class TimeTransfer:
@@ -65,3 +66,12 @@ class TimeTransfer:
                 return int(time_obj.timestamp())
         # 如果不符合预期格式，抛出异常
         raise ValueError(f"incorrect data format, supported formats: {json.dumps(supported_formats)}")
+
+    @classmethod
+    def timestamp_to_str(cls, timestamp: int, format: Optional[str] = None) -> str:
+        """Converts a timestamp to a string in the format"""
+        # 当没有指定格式时，按照默认格式进行转换，默认为"%Y-%m-%d %H:%M:%S"
+        if format is None:
+            format = "%Y-%m-%d %H:%M:%S"
+        dt = datetime.fromtimestamp(timestamp)
+        return dt.strftime(format)
