@@ -3,6 +3,7 @@ import shutil
 
 import pytest
 
+from utils.cleanup_folder import cleanup_folder
 
 @pytest.fixture()
 def create_and_delete_folder():
@@ -21,5 +22,10 @@ def create_and_delete_folder():
     shutil.rmtree("/tmp/test_folder")
 
 
-def test_cleanup_folder():
-    pass
+def test_cleanup_folder(create_and_delete_folder):
+    base_dir = "/tmp/test_folder"
+    flag = cleanup_folder(folder_path=base_dir, keep_num=3,force=True)
+    assert flag == True
+    fp = Path(base_dir)
+    subdirs = [d for d in fp.iterdir() if d.is_dir()]
+    assert len(subdirs) == 3
