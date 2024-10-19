@@ -8,3 +8,4 @@ this repo is a collection of small python functions and classes, which improve w
 - [x] cpu_usage: cpu usage of current process.
 - [x] decorator: decorator for sample and time costs.
 - [x] logger: custom logger for logging.
+- [x] clean_folder: clean folder by time and number
