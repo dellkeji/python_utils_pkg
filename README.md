@@ -10,3 +10,4 @@ this repo is a collection of small python functions and classes, which improve w
 - [x] logger: custom logger for logging.
 - [x] clean_folder: clean folder by time and number
 - [x] retry by count or exception
+- [ ] copy files or dir
