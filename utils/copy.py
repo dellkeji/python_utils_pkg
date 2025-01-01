@@ -24,13 +24,18 @@ def copy_file(src: str, dst: str, is_dst_file: Optional[bool] = False) -> bool:
     if _is_file(src):
         return _copy_file(src, dst, is_dst_file)
     if _is_dir(src):
-        pass
+        if is_dst_file:
+            raise ValueError("源为目录时，目的路径不能是文件")
+        return _copy_dir(src, dst)
     raise NotImplementedError("暂不支持拷贝目录")
 
 
 def _copy_dir(src: str, dst: str) -> bool:
     """拷贝目录下的内容到指定的目录"""
-    pass
+    # 检测目录是否存在，不存在，则创建
+    if not os.path.exists(dst):
+        os.mkdir(dst)
+    shutil.copytree(src, dst, dirs_exist_ok=True)
 
 
 def _copy_file(src: str, dst: str, is_dst_file: Optional[bool] = False) -> bool:
