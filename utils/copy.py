@@ -21,6 +21,11 @@ def copy_file(src: str, dst: str, is_dst_file: Optional[bool] = False) -> bool:
         # TODO: 可以记录日志或者直接抛出异常
         return False
     # 检查源是文件还是目录
+    if _is_file(src):
+        return _copy_file(src, dst, is_dst_file)
+    if _is_dir(src):
+        pass
+    raise NotImplementedError("暂不支持拷贝目录")
 
 
 def _copy_dir(src: str, dst: str) -> bool:
