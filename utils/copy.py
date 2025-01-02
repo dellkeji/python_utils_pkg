@@ -34,16 +34,14 @@ def _copy_dir(src: str, dst: str) -> bool:
     """拷贝目录下的内容到指定的目录"""
     # 检测目录是否存在，不存在，则创建
     if not os.path.exists(dst):
-        os.mkdir(dst)
+        os.makedirs(dst, exist_ok=True)
     shutil.copytree(src, dst, dirs_exist_ok=True)
 
 
 def _copy_file(src: str, dst: str, is_dst_file: Optional[bool] = False) -> bool:
     """拷贝文件到指定位置"""
-    dst_path = Path(dst)
-    # 检测目录是否存在，不存在，则创建
-    if not os.path.exists(dst):
-        dst_path.parent.mkdir(parents=True, exist_ok=True)
+    if not is_dst_file:
+        os.makedirs(dst, exist_ok=True)
     # 拷贝文件
     shutil.copy(src, dst)
     return True
