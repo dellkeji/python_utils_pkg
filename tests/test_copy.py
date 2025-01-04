@@ -32,3 +32,13 @@ def test_copy_file(create_and_delete_file):
     dst_path = "/tmp/test1/test1.txt"
     copy_file(src_path, dst_path, is_dst_file=True)
     assert os.path.exists(dst_path)
+
+
+def test_copy_dir(create_and_delete_file):
+    dst_path = "/tmp/test2"
+    copy_file("/tmp/test/test1.txt", dst_path)
+    assert os.path.exists(dst_path+"/test1.txt")
+
+    copy_file("/tmp/test", dst_path)
+    assert os.path.exists(dst_path+"/test1.txt")
+    assert os.path.exists(dst_path+"/test.txt")
