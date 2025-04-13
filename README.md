@@ -11,4 +11,4 @@ this repo is a collection of small python functions and classes, which improve w
 - [x] clean_folder: clean folder by time and number
 - [x] retry by count or exception
 - [x] copy files or dir
-- [ ] get host ip
+- [x] get host ip
