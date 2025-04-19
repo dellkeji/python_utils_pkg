@@ -12,3 +12,4 @@ this repo is a collection of small python functions and classes, which improve w
 - [x] retry by count or exception
 - [x] copy files or dir
 - [x] get host ip
+- [X] ast demo
