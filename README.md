@@ -12,4 +12,5 @@ this repo is a collection of small python functions and classes, which improve w
 - [x] retry by count or exception
 - [x] copy files or dir
 - [x] get host ip
-- [X] ast demo
+- [x] ast demo
+- [] delete file or dir, allow the long path for windows system
