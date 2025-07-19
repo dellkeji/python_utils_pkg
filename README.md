@@ -14,3 +14,4 @@ this repo is a collection of small python functions and classes, which improve w
 - [x] get host ip
 - [x] ast demo
 - [] delete file or dir, allow the long path for windows system
+- [] aws strands agent to mcp
