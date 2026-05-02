@@ -1,8 +1,8 @@
 # python_utils_pkg
-this repo is a collection of small python functions and classes, which improve work efficiency and reduce duplication and implement similar functions.
 
+A collection of reusable Python utilities to improve work efficiency and reduce code duplication.
 
-# utils list
+## Utils List
 - [x] time_transfer: convert time from one format to another format.
 - [x] mem_usage: mem usage of current process.
 - [x] cpu_usage: cpu usage of current process.
